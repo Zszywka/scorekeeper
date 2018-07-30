@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 //importujemy liste graczy
 import PlayersList from './components/PlayersList/PlayersList';
+import AddPlayer from './components/AddPlayer/AddPlayer';
 
 class App extends Component {
   constructor() {
@@ -10,8 +11,8 @@ class App extends Component {
     //stan poczatkowy aplikacji
     this.state = {
       players: [
-        { name: 'Alicja', score: 5, },
-        { name: 'Remi', score: 0, }
+        { name: 'Kalina', score: 5, },
+        { name: 'Hubaert', score: 0, }
       ]
     }
   }
@@ -38,34 +39,33 @@ class App extends Component {
     })
   }
 
+  //dodanie nowego gracza
   onPlayerAdd = (playerName) => {
     const newPlayer = {
       name: playerName,
       score: 0,
-      id: uuid.v4()
+      id: uuid.v4(),
     }
     this.setState({
-      players: [
-        ...this.state.players, newPlayer
-      ]
+      //skladnia spread-> tworzy nowa tablice graczy z dodanym graczem
+      players: [...this.state.players, newPlayer ]
     })
   }
 
-  onPlayerRemove = playerIndex => {
+  onPlayerRemove = (playerIndex) => {
     this.setState({
       players: this.state.players.filter(
         //filtruje i zostawia tylko te spelniajace warunek
         (player, index) => index !== playerIndex
       )
-    })
-  }
+    });
+  };
 
   render() {
     return (
       <div className="App">
-        <PlayersList players={this.state.players} />
+        <AddPlayer onPlayerAdd={this.onPlayerAdd} />
         <PlayersList players={this.state.players} onScoreUpdate={this.onScoreUpdate} onPlayerRemove={this.onPlayerRemove}/>
-
       </div>
     );
   }

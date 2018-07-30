@@ -1,34 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 .AddPlayer {
-    margin-left: 38.5%;
-    margin-right: 38.5%;
-    width: 100%;
-    margin-top: 150px;
+  margin-left: 50%;
+  margin-right: 38.5%;
+  width: 100%;
+  margin-top: 150px;
+  margin-bottom: 30px;
 }
 
 .AddPlayer__input {
-    background: transparent;
-    border: none;
-    border-bottom: 3px solid #464aa3;
-    border-radius: 10px;
-    width: 400px;
-    color: #c3c4e2;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid #464aa3;
+  border-radius: 10px;
+  width: 400px;
+  color: #c3c4e2;
 }
 
 .AddPlayer__submit {
-    margin-left: 30px;
-    background-color: #464aa3;
-    opacity: 0.5;
-    padding: 15px 25px;
-    border: none;
-    border-radius: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    color: #c3c4e2;
-    font-family: 'Poiret One', cursive;
+  margin-left: 30px;
+  background-color: #464aa3;
+  opacity: 0.5;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  font-family: 'Poiret One', cursive;
 }
+
 .AddPlayer__submit:hover {
-    background-color: #2c603c;
-    color: #c3c4e2;
-    cursor: pointer;
+  background-color: #2c603c;
+  color: #c3c4e2;
+  cursor: pointer;
 }

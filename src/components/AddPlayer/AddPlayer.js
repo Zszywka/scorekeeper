@@ -19,11 +19,11 @@ const AddPlayer = (props) => {
   }
   //met ref z REACTA,mozna przypisac dowolny elem DOM do zmiennej
   //ref={(node) => input = node} -> mamdy dostep do input.value
+  //dodajemy atrybut ref aby dostac sie do pola tekstowego i wyciagnac input.value
   return (
     <form className="AddPlayer" onSubmit={onSubmit}>
-    //dodajemy atrybut ref aby dostac sie do pola tekstowego i wyciagnac input.value
       <input type="text" className="AddPlayer__input" ref={(node) => input = node}/>
-      <input type="submit" className="AddPlayer__submit" value="Add" />
+      <input type="submit" className="AddPlayer__submit" value="Add your name" />
     </form>
   )
 };
