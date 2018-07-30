@@ -1,0 +1,23 @@
+.Player {
+  display: flex;
+  flex-flow: row;
+  width: 56vh;
+  margin: 6px;
+  border: 1px solid grey;
+}
+
+.Player__name {
+  text-align: center;
+  width:  36vw;
+  background-color: lightgrey;
+}
+
+.Player__score, .Player__button {
+  min-width: 6vw;
+  border: 1px solid grey;
+
+}
+
+.Player__button {
+  color: blue;;
+}

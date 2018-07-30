@@ -1,0 +1,9 @@
+.PlayersList {
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 54vw;
+  min-height: 7vh;
+  list-style-type: none;
+ }
