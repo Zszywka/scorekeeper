@@ -1,6 +1,6 @@
 import React from 'react';
 import './Player.css';
-//props -name of player
+
 const Player = (props) => (
   <li className="Player">
     <span className="Player__name">{props.name}</span>

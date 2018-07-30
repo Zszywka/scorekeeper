@@ -1,14 +1,13 @@
 import uuid from 'uuid';
 import React, { Component } from 'react';
 import './App.css';
-//importujemy liste graczy
 import PlayersList from './components/PlayersList/PlayersList';
 import AddPlayer from './components/AddPlayer/AddPlayer';
 
 class App extends Component {
   constructor() {
     super();
-    //stan poczatkowy aplikacji
+
     this.state = {
       players: [
         { name: 'Kalina', score: 5, },
@@ -17,21 +16,10 @@ class App extends Component {
     }
   }
 
-  //funkcja do dodawania/odejmowania punktow
-  //konieczny plugin -> http://babeljs.io/docs/en/babel-plugin-transform-class-properties/
-  //lub: onScoreUpdate={() => this.onScoreUpdate}
-  //lub: this.onScoreUpdate = this.onScoreUpdate.bind(this);
-  //id gracza i liczbe punktow przyjmuje f.
   onScoreUpdate = (playerIndex, scoreChange) => {
     this.setState({
       players: this.state.players.map((player, index) => {
         if (index === playerIndex) {
-          //object spread operator
-          //to to samo co:
-          //return Object.assign({}, player, { score: player.score + scoreChange });
-          // zwraca nowy obiekt, na podstawie obiektu player,ale podmienia score
-          //na nową wartość (dodając scoreChange do aktualnego stanu punktow gracza)
-          //np score = player.score(masz teraz 10pkt) + scoreChange(straciles 2) wiec nowe score ma 8pkt
           return { ...player, score: player.score + scoreChange };
         }
         return player;
@@ -39,7 +27,6 @@ class App extends Component {
     })
   }
 
-  //dodanie nowego gracza
   onPlayerAdd = (playerName) => {
     const newPlayer = {
       name: playerName,
@@ -47,7 +34,6 @@ class App extends Component {
       id: uuid.v4(),
     }
     this.setState({
-      //skladnia spread-> tworzy nowa tablice graczy z dodanym graczem
       players: [...this.state.players, newPlayer ]
     })
   }
@@ -55,7 +41,6 @@ class App extends Component {
   onPlayerRemove = (playerIndex) => {
     this.setState({
       players: this.state.players.filter(
-        //filtruje i zostawia tylko te spelniajace warunek
         (player, index) => index !== playerIndex
       )
     });
