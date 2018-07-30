@@ -2,7 +2,7 @@
 import React from 'react';
 import Player from '../Player/Player';
 import './PlayersList.css';
-
+//komponent, który w liście ul renderuje informacje o graczach, mapując je na komponenty Player
 const PlayersList = (props) => (
    <ul className="PlayersList">
        {props.players.map((player, i) => (
